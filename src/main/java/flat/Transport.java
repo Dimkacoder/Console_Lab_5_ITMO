@@ -2,14 +2,13 @@
 // Source code recreated from a .class file by IntelliJ IDEA
 // (powered by Fernflower decompiler)
 //
-
 package flat;
-
 public enum Transport {
     NONE,
     FEW,
     NORMAL,
     ENOUGH;
+
 
     private Transport() {
     }
@@ -24,45 +23,21 @@ public enum Transport {
     }
 
     public static Transport getByName(String transport) {
-        transport = transport.toUpperCase();
-        byte var2 = -1;
-        switch(transport.hashCode()) {
-        case -1986416409:
-            if (transport.equals("NORMAL")) {
-                var2 = 2;
-            }
-            break;
-        case 69496:
-            if (transport.equals("FEW")) {
-                var2 = 0;
-            }
-            break;
-        case 2402104:
-            if (transport.equals("NONE")) {
-                var2 = 1;
-            }
-            break;
-        case 2049883504:
-            if (transport.equals("ENOUGH")) {
-                var2 = 3;
-            }
-        }
-
-        switch(var2) {
-        case 0:
+        if ("FEW".equals(transport)) {
             return FEW;
-        case 1:
+        } else if ("NONE".equals(transport)) {
             return NONE;
-        case 2:
+        } else if ("NORMAL".equals(transport)) {
             return NORMAL;
-        case 3:
+        } else if ("ENOUGH".equals(transport)) {
             return ENOUGH;
-        default:
-            return null;
         }
+        return null;
     }
 
     public static String transportToString() {
         return "FEW, NONE, NORMAL, ENOUGH";
     }
+
+
 }
